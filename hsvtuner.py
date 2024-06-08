@@ -64,8 +64,11 @@ def tune_hsv(img):
 
 
         imgStack = stackImages(0.6,([img,imgHSV],[mask,imgResult]))
+
         cv2.imshow("Image Stack", imgStack)
-        if cv2.waitKey(1) == 113:
+        key = cv2.waitKey(1)
+
+        if key == ord('q'):
             end = True
             cv2.destroyAllWindows()
     return lower,upper
